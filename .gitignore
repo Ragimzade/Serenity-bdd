@@ -1,2 +1,25 @@
-*.ibc
-*.o
+
+# Log file
+*.log
+
+# target folder
+target/
+
+# idea folder
+.idea/
+
+# screenshots
+screenshots_from_tests
+
+# reports folder
+.allure
+
+# downloads folder
+downloads/
+
+tokens/
+
+*.iml
+
+
+
