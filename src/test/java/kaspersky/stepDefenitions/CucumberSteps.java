@@ -22,7 +22,6 @@ public class CucumberSteps {
     @Given("User is on main page")
     public void user_is_on_main_page() {
         sentDate = DateUtils.addMinutes(new Date(), -1);
-        System.out.println(sentDate);
         commonSteps.openMainPage();
     }
 
