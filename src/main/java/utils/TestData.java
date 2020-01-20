@@ -11,8 +11,6 @@ import java.nio.file.Paths;
 
 public class TestData {
     private static final String CREDS_FILE_PATH = "src/main/resources/creds.json";
-    private static final String PRODUCT_JSON_FILE_PATH = "src/main/resources/product.json";
-
 
     static JSONParser parser = new JSONParser();
 

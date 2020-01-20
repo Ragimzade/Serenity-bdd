@@ -1,4 +1,4 @@
-package kaspersky.tests;
+package kaspersky;
 
 
 import cucumber.api.CucumberOptions;
@@ -12,5 +12,4 @@ import org.junit.runner.RunWith;
         features = {"src/test/resources/send_an_email.feature"}
 )
 public class CucumberTestSuite {
-
 }

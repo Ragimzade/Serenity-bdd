@@ -50,7 +50,7 @@ public class ConfigFileReader {
     }
 
     public String getBrowserDownloadPath() {
-        String browserDownloadPath = prop.getProperty("BrowserDownloadPath");
+        String browserDownloadPath = prop.getProperty("BrowserDownloadPath", "target/downloads");
         Objects.requireNonNull(browserDownloadPath, "Set property BrowserDownloadPath in config");
         return browserDownloadPath;
     }
