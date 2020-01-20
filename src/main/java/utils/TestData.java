@@ -2,18 +2,18 @@ package utils;
 
 
 import lombok.SneakyThrows;
-import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 import java.io.FileReader;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.List;
 
 public class TestData {
-    public static final String CREDS_FILE_PATH = "src/main/resources/creds.json";
+    private static final String CREDS_FILE_PATH = "src/main/resources/creds.json";
+    private static final String PRODUCT_JSON_FILE_PATH = "src/main/resources/product.json";
+
+
     static JSONParser parser = new JSONParser();
 
     @SneakyThrows
@@ -23,5 +23,10 @@ public class TestData {
         JSONObject jsonObject = (JSONObject) obj;
         return (String) jsonObject.get(key);
     }
+
+
+
+
+
 
 }

@@ -1,14 +1,16 @@
 package kaspersky.pages;
 
-import base.IBaseEntity;
+
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.WebElementFacade;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
+import base.IBaseEntity;
 
 import java.util.List;
 import java.util.Objects;
+
 
 public class DownloadPage extends BasePage {
 
@@ -32,15 +34,25 @@ public class DownloadPage extends BasePage {
     @FindBy(xpath = "//*[@id='portal-menu']//span[text()='Письма']")
     private WebElementFacade lettersToolbarButton;
 
+    @FindBy(xpath = "//button[@data-at-select='cookieNotificationAccceptButton']")
+    private WebElementFacade cookieAcceptButton;
+
     private static final int TIMEOUT_IN_SECONDS = 120;
     private static final int DELAY_IN_MILLIS = 1000;
 
 
     public void sendAppToMySelf(String product) {
+        acceptCookieIfRequire();
         sendProductToMySelf(product);
         sendButton.click();
         clickOkButtonIfPresent();
         waitForCaptchaValidation();
+    }
+
+    public void acceptCookieIfRequire() {
+        if (cookieAcceptButton.isPresent()) {
+            cookieAcceptButton.click();
+        }
     }
 
     private void clickOkButtonIfPresent() {
@@ -50,6 +62,7 @@ public class DownloadPage extends BasePage {
     }
 
     public void goToSelectedOsTab(String os) {
+
         findBy(OS_TAB_BUTTONS, os).click();
     }
 

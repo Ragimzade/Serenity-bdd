@@ -27,7 +27,7 @@ public class ConfigFileReader {
 
     public String getBrowser() {
         String browser = prop.getProperty("Browser", "CHROME");
-        Objects.requireNonNull(browser, "Set property browser in config");
+        Objects.requireNonNull(browser, "Set property framework.browser in config");
         return browser;
     }
 

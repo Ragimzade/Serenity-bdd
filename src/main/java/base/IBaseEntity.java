@@ -2,12 +2,13 @@ package base;
 
 import org.awaitility.core.ConditionFactory;
 import org.awaitility.core.ConditionTimeoutException;
-import utils.ConfigFileReader;
-import utils.Log;
 
 import java.util.List;
 import java.util.concurrent.Callable;
 import java.util.concurrent.TimeUnit;
+import utils.ConfigFileReader;
+import utils.Log;
+
 
 import static org.awaitility.Awaitility.await;
 import static org.hamcrest.Matchers.empty;

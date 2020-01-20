@@ -1,8 +1,9 @@
 package kaspersky.pages;
 
-import base.IBaseEntity;
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
+import base.IBaseEntity;
+
 
 public class BasePage extends PageObject implements IBaseEntity {
 

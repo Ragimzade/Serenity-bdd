@@ -1,10 +1,11 @@
 package browser;
 
-import base.IBaseEntity;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.firefox.FirefoxProfile;
+import base.IBaseEntity;
+
 
 import java.util.HashMap;
 
@@ -30,9 +31,9 @@ public class BrowserOptions implements IBaseEntity {
         WebDriverManager.firefoxdriver().setup();
         FirefoxProfile profile = new FirefoxProfile();
         profile.setPreference("intl.accept_languages", "eng");
-        profile.setPreference("browser.download.folderList", 2);
-        profile.setPreference("browser.helperApps.neverAsk.saveToDisk", "application/octet-stream");
-        profile.setPreference("browser.download.dir", System.getProperty("user.dir") + config.getBrowserDownloadPath());
+        profile.setPreference("framework.browser.download.folderList", 2);
+        profile.setPreference("framework.browser.helperApps.neverAsk.saveToDisk", "application/octet-stream");
+        profile.setPreference("framework.browser.download.dir", System.getProperty("user.dir") + config.getBrowserDownloadPath());
         FirefoxOptions firefoxOptions = new FirefoxOptions();
         firefoxOptions.setProfile(profile);
 

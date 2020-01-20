@@ -1,7 +1,7 @@
 package utils;
 
-import base.IBaseEntity;
 import lombok.SneakyThrows;
+import base.IBaseEntity;
 
 import javax.mail.*;
 import javax.mail.search.SearchTerm;
@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.Objects;
 
 import static utils.TestData.getValue;
+
 
 public class MailUtils implements IBaseEntity {
     private static final String SMTP_HOST = config.getSmtpHost();
@@ -43,6 +44,7 @@ public class MailUtils implements IBaseEntity {
         folder.open(Folder.READ_WRITE);
         int messageCount = folder.getMessageCount();
         log.info("Total Messages:- " + messageCount);
+        log.info("Sent time" + sendTime);
         SearchTerm term = new SearchTerm() {
             @Override
             public boolean match(Message message) {

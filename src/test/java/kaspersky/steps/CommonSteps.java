@@ -1,14 +1,15 @@
 package kaspersky.steps;
 
-import browser.Browser;
+
 import kaspersky.pages.DownloadPage;
 import kaspersky.pages.LoggedInMainPage;
 import kaspersky.pages.MainPage;
 import net.thucydides.core.annotations.Step;
-import utils.MailUtils;
 
 import javax.mail.MessagingException;
+import browser.Browser;
 import java.util.Date;
+import utils.MailUtils;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -18,33 +19,34 @@ public class CommonSteps {
     LoggedInMainPage loggedInMainPage;
     DownloadPage downloadPage;
 
+    public static final String PRODUCT_JSON_FILE_PATH = "src/main/resources/product.json";
+
     @Step
     //WHEN
-    public void userOpensMainPage() {
+    public void openMainPage() {
         mainPage.open();
         Browser.refreshPage();
-        mainPage.assertPageIsOpened();
+//        mainPage.assertPageIsOpened();
     }
 
     @Step
     //WHEN
-    public void userDoesLogin(String email, String password) {
+    public void doLogin(String email, String password) {
         if (!mainPage.isSignedIn()) {
             mainPage.login(email, password);
-            loggedInMainPage.assertPageIsOpened();
         }
     }
 
     @Step
     //WHEN
-    public void userGoesToDownloadPage() {
+    public void goToDownloadPage() {
         loggedInMainPage.goToDownloadPage();
-        downloadPage.assertPageIsOpened();
+        loggedInMainPage.assertPageIsOpened();
     }
 
     @Step
     //WHEN
-    public void userGoesToOsTab(String os) {
+    public void goToTab(String os) {
         downloadPage.goToSelectedOsTab(os);
     }
 
@@ -59,6 +61,7 @@ public class CommonSteps {
     //WHEN
     public void userSendsAppToHimself(String product) {
         downloadPage.sendAppToMySelf(product);
+
     }
 
     @Step
@@ -73,11 +76,10 @@ public class CommonSteps {
     public void userSeesMessageContainsCorrectLink(String subject, Date sentTime, String emailLink) {
         assertThat(MailUtils.getMessageContent(subject, sentTime))
                 .contains(emailLink)
-                .as(String.format("Email doesn't contain link %s", emailLink));
+                .as(String.format("Email doesn't contain link  %s", emailLink));
     }
 
     @Step
-    //When
     public void userLogsOut() {
         loggedInMainPage.logOut();
     }

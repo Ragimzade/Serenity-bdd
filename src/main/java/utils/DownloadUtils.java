@@ -1,7 +1,7 @@
 package utils;
 
-import base.IBaseEntity;
 import org.openqa.selenium.TimeoutException;
+import base.IBaseEntity;
 
 import java.io.IOException;
 import java.nio.file.Files;

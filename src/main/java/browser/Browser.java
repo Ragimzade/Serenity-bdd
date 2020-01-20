@@ -1,12 +1,13 @@
 package browser;
 
-import base.IBaseEntity;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import base.IBaseEntity;
 
 import static browser.BrowserFactory.initDriver;
+
 
 public class Browser implements IBaseEntity {
     private static volatile WebDriver driver;
