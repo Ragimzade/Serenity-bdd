@@ -15,7 +15,7 @@ import static utils.TestData.getValue;
 
 public class MailUtils implements IBaseEntity {
     private static final String SMTP_HOST = config.getSmtpHost();
-    private static final String SMTP_USER_LOGIN = getValue("kasperskyLogin2");
+    private static final String SMTP_USER_LOGIN = getValue("kasperskyLogin");
     private static final String SMTP_PASSWORD = "9802357s";
     private static final String PROTOCOL = config.getSmtpProtocol();
     private static final int TIMEOUT_IN_SECONDS = 40;

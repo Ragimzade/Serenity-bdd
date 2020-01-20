@@ -31,16 +31,15 @@ public class CommonSteps {
     public void userDoesLogin(String email, String password) {
         if (!mainPage.isSignedIn()) {
             mainPage.login(email, password);
-
+            loggedInMainPage.assertPageIsOpened();
         }
-
     }
 
     @Step
     //WHEN
     public void userGoesToDownloadPage() {
         loggedInMainPage.goToDownloadPage();
-        loggedInMainPage.assertPageIsOpened();
+        downloadPage.assertPageIsOpened();
     }
 
     @Step
@@ -60,7 +59,6 @@ public class CommonSteps {
     //WHEN
     public void userSendsAppToHimself(String product) {
         downloadPage.sendAppToMySelf(product);
-
     }
 
     @Step
@@ -79,6 +77,7 @@ public class CommonSteps {
     }
 
     @Step
+    //When
     public void userLogsOut() {
         loggedInMainPage.logOut();
     }

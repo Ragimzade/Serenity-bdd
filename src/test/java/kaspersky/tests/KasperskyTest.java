@@ -38,7 +38,7 @@ public class KasperskyTest extends BaseTest {
     public void sendEmailTest() throws MessagingException {
         Date sendTime = new Date();
         commonSteps.userOpensMainPage();
-        commonSteps.userDoesLogin(getValue("kasperskyLogin2"), getValue("kasperskyPassword"));
+        commonSteps.userDoesLogin(getValue("kasperskyLogin"), getValue("kasperskyPassword"));
         commonSteps.userGoesToDownloadPage();
         commonSteps.userGoesToOsTab(os);
         commonSteps.userSeesThatChosenProductHasCorrectDescription(product, description);
