@@ -12,7 +12,7 @@ import utils.TestData;
 import javax.mail.MessagingException;
 import java.util.Date;
 
-public class CucumberSteps {
+public class SendEmailSteps {
 
     @Steps
     CommonSteps commonSteps;

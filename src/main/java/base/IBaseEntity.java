@@ -6,6 +6,7 @@ import org.awaitility.core.ConditionTimeoutException;
 import java.util.List;
 import java.util.concurrent.Callable;
 import java.util.concurrent.TimeUnit;
+
 import utils.ConfigFileReader;
 import utils.Log;
 
@@ -55,6 +56,14 @@ public interface IBaseEntity {
     static <T> List<T> waitForList(int timeout, int delay, String errorMessage, Callable<List<T>> supplier) {
         try {
             return getDelay(timeout, delay).until(supplier, not(empty()));
+        } catch (ConditionTimeoutException ex) {
+            throw new AssertionError(errorMessage, ex);
+        }
+    }
+
+    static <T> List<T> waitForList(String errorMessage, Callable<List<T>> supplier) {
+        try {
+            return getDelay(5, 1000).until(supplier, not(empty()));
         } catch (ConditionTimeoutException ex) {
             throw new AssertionError(errorMessage, ex);
         }

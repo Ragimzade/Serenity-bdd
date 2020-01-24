@@ -30,6 +30,4 @@ public class BrowserFactory {
         }
         return driver;
     }
-
-
 }

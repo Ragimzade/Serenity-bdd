@@ -110,5 +110,4 @@ public class MailUtils implements IBaseEntity {
     public static void deleteAllInboxMessages() {
         deleteAllMessages("inbox");
     }
-
 }

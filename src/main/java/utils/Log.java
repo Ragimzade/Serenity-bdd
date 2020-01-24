@@ -26,4 +26,8 @@ public final class Log {
     public void error(String message) {
         logger.error(message);
     }
+
+    public void error(int errorCode) {
+        logger.error(errorCode);
+    }
 }

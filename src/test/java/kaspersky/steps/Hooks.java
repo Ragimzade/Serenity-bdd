@@ -1,4 +1,4 @@
-package kaspersky;
+package kaspersky.steps;
 
 import browser.Browser;
 import cucumber.api.java.After;

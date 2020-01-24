@@ -4,6 +4,10 @@ package kaspersky.enums;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
 @AllArgsConstructor
 @Getter
 public enum NavigationMenuTabs {
@@ -14,6 +18,7 @@ public enum NavigationMenuTabs {
     Store("Store");
 
     private String tab;
+
 }
 
 
